@@ -1,6 +1,6 @@
 {
   "name": "mdast-midas",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Highlight CSS in Markdown files with midas.",
   "main": "index.js",
   "files": [
@@ -8,8 +8,8 @@
     "dist"
   ],
   "scripts": {
-      "prepublish": "babel src --out-dir dist --ignore /__tests__/",
-      "test": "babel-tape-runner \"src/**/__tests__/*.js\" | tap-spec"
+    "prepublish": "babel src --out-dir dist --ignore /__tests__/",
+    "test": "babel-tape-runner \"src/**/__tests__/*.js\" | tap-spec"
   },
   "keywords": [
     "css",
