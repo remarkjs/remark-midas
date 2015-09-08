@@ -1,6 +1,6 @@
 {
   "name": "mdast-midas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Highlight CSS in Markdown files with midas.",
   "main": "dist/index.js",
   "files": [
