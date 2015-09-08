@@ -2,7 +2,7 @@
   "name": "mdast-midas",
   "version": "1.0.0",
   "description": "Highlight CSS in Markdown files with midas.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "LICENSE-MIT",
     "dist"
