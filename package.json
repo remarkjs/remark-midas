@@ -1,0 +1,42 @@
+{
+  "name": "mdast-midas",
+  "version": "0.0.0",
+  "description": "Highlight CSS in Markdown files with midas.",
+  "main": "index.js",
+  "files": [
+    "LICENSE-MIT",
+    "dist"
+  ],
+  "scripts": {
+      "prepublish": "babel src --out-dir dist --ignore /__tests__/",
+      "test": "babel-tape-runner \"src/**/__tests__/*.js\" | tap-spec"
+  },
+  "keywords": [
+    "css",
+    "highlight",
+    "syntax",
+    "midas",
+    "markdown",
+    "mdast"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-tape-runner": "^1.2.0",
+    "mdast": "^1.2.0",
+    "mdast-html": "^1.1.0",
+    "tap-spec": "^2.2.2",
+    "tape": "^3.5.0"
+  },
+  "homepage": "https://github.com/ben-eb/mdast-midas",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "ben-eb/mdast-midas",
+  "dependencies": {
+    "midas": "^1.2.0",
+    "unist-util-visit": "^1.0.0"
+  }
+}
