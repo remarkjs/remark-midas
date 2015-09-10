@@ -1,3 +1,8 @@
+# 1.1.0
+
+* The module will now add classes to a node's existing class attribute, instead
+  of overriding.
+
 # 1.0.1
 
 * Fixes incorrect entry point in package.json.

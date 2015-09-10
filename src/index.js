@@ -16,7 +16,12 @@ export default function attacher () {
         }
 
         data.htmlContent = midas(node.value, {wrap: false});
-        data.htmlAttributes = {'class': 'language-css midas'};
+        data.htmlAttributes = data.htmlAttributes || {};
+        data.htmlAttributes.class = [
+            data.htmlAttributes.class,
+            'language-' + node.lang,
+            'midas'
+        ].filter(Boolean).join(' ');
     }
 
     return ast => visit(ast, 'code', visitor);
