@@ -1,3 +1,7 @@
+# 2.0.0
+
+* Renamed to remark-midas without API changes.
+
 # 1.1.0
 
 * The module will now add classes to a node's existing class attribute, instead
