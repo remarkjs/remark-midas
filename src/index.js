@@ -1,5 +1,3 @@
-'use strict';
-
 import midas from 'midas';
 import visit from 'unist-util-visit';
 
@@ -19,7 +17,6 @@ export default function attacher () {
         data.htmlAttributes = data.htmlAttributes || {};
         data.htmlAttributes.class = [
             data.htmlAttributes.class,
-            'language-' + node.lang,
             'midas'
         ].filter(Boolean).join(' ');
     }
