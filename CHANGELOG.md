@@ -1,3 +1,7 @@
+# 3.0.0
+
+* Upgraded to remark 4.x.
+
 # 2.0.0
 
 * Renamed to remark-midas without API changes.
