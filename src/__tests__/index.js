@@ -11,7 +11,7 @@ ava('should highlight css', t => {
     t.plan(1);
 
     let result = remark.use([ html, midas ]).process(base('input.md'));
-    t.same(result, base('output.html'));
+    t.deepEqual(result, base('output.html'));
 });
 
 ava('should not modify existing htmlAttributes and classes', t => {
@@ -30,6 +30,6 @@ ava('should not modify existing htmlAttributes and classes', t => {
         .use(midas)
         .run(ast);
 
-    t.same(ast.children[0].data.htmlAttributes['data-foo'], 'bar');
-    t.ok(~ast.children[0].data.htmlAttributes.class.indexOf('quux'));
+    t.deepEqual(ast.children[0].data.htmlAttributes['data-foo'], 'bar');
+    t.truthy(~ast.children[0].data.htmlAttributes.class.indexOf('quux'));
 });
