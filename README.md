@@ -22,7 +22,8 @@ var html  = require('remark-html');
 var midas = require('remark-midas');
 
 var markdown = '```css\nh1 {\n    color: red;\n}\n```\n';
-var result = remark.use([ html, midas ]).process(markdown);
+// For remark 4, use `remark.use()` instead of `remark().use()`
+var result = remark().use([ html, midas ]).process(markdown);
 console.log(result);
 
 //=> Compiled HTML with highlighted CSS!

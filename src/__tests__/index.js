@@ -8,16 +8,12 @@ import {join} from 'path';
 let base = file => read(join(__dirname, 'fixtures', file), 'utf-8');
 
 ava('should highlight css', t => {
-    t.plan(1);
-
-    let result = remark.use([ html, midas ]).process(base('input.md'));
-    t.deepEqual(result, base('output.html'));
+    const {contents} = remark().use(html).use(midas).process(base('input.md'));
+    t.deepEqual(contents, base('output.html'));
 });
 
 ava('should not modify existing htmlAttributes and classes', t => {
-    t.plan(2);
-
-    let ast = remark.parse('```css\nh1{}\n```', {position: false});
+    let ast = remark().parse('```css\nh1{}\n```', {position: false});
     ast = remark()
         .use(() => tree => {
             tree.children[0].data = {
