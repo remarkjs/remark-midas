@@ -31,7 +31,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-tape-runner": "^2.0.0",
     "del-cli": "^0.2.0",
-    "eslint": "^2.1.0",
+    "eslint": "^3.0.1",
     "eslint-config-cssnano": "^2.0.0",
     "remark": "^5.0.1",
     "remark-html": "^3.0.0"
