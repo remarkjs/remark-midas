@@ -1,11 +1,11 @@
-import ava from 'ava';
-import midas from '../';
-import remark from 'remark';
-import html from 'remark-html';
 import {readFileSync as read} from 'fs';
 import {join} from 'path';
+import ava from 'ava';
+import remark from 'remark';
+import html from 'remark-html';
+import midas from '../';
 
-let base = file => read(join(__dirname, 'fixtures', file), 'utf-8');
+const base = file => read(join(__dirname, 'fixtures', file), 'utf-8');
 
 ava('should highlight css', t => {
     const {contents} = remark().use(html).use(midas).process(base('input.md'));
@@ -19,8 +19,8 @@ ava('should not modify existing htmlAttributes and classes', t => {
             tree.children[0].data = {
                 htmlAttributes: {
                     'data-foo': 'bar',
-                    class: 'quux'
-                }
+                    class: 'quux',
+                },
             };
         })
         .use(midas)

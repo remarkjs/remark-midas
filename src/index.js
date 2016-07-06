@@ -17,7 +17,7 @@ export default function attacher () {
         data.htmlAttributes = data.htmlAttributes || {};
         data.htmlAttributes.class = [
             data.htmlAttributes.class,
-            'midas'
+            'midas',
         ].filter(Boolean).join(' ');
     }
 
