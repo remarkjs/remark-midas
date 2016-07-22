@@ -47,7 +47,7 @@
   },
   "repository": "ben-eb/remark-midas",
   "dependencies": {
-    "midas": "^1.2.0",
+    "midas": "^2.0.0",
     "unist-util-visit": "^1.0.0"
   },
   "eslintConfig": {
