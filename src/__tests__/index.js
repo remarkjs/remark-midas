@@ -17,15 +17,15 @@ ava('should not modify existing htmlAttributes and classes', t => {
     ast = remark()
         .use(() => tree => {
             tree.children[0].data = {
-                htmlAttributes: {
+                hProperties: {
                     'data-foo': 'bar',
-                    class: 'quux',
+                    class: ['quux'],
                 },
             };
         })
         .use(midas)
         .run(ast);
 
-    t.deepEqual(ast.children[0].data.htmlAttributes['data-foo'], 'bar');
-    t.truthy(~ast.children[0].data.htmlAttributes.class.indexOf('quux'));
+    t.deepEqual(ast.children[0].data.hProperties['data-foo'], 'bar');
+    t.truthy(~ast.children[0].data.hProperties.class.indexOf('quux'));
 });

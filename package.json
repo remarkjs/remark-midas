@@ -37,7 +37,7 @@
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^1.10.2",
     "remark": "^5.0.1",
-    "remark-html": "^3.0.0"
+    "remark-html": "^5.0.0"
   },
   "homepage": "https://github.com/ben-eb/remark-midas",
   "author": {
@@ -47,7 +47,7 @@
   },
   "repository": "ben-eb/remark-midas",
   "dependencies": {
-    "midas": "^1.2.0",
+    "midas": "^2.0.0",
     "unist-util-visit": "^1.0.0"
   },
   "eslintConfig": {

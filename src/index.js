@@ -1,24 +1,27 @@
-import midas from 'midas';
+import Midas from 'midas';
 import visit from 'unist-util-visit';
 
 export default function attacher () {
+    const midas = new Midas({stringify: false, wrap: false});
+
     function visitor (node) {
         if (node.lang !== 'css') {
             return;
         }
 
-        let data = node.data;
+        let {data} = node;
 
         if (!data) {
             node.data = data = {};
         }
 
-        data.htmlContent = midas(node.value, {wrap: false});
-        data.htmlAttributes = data.htmlAttributes || {};
-        data.htmlAttributes.class = [
-            data.htmlAttributes.class,
+        data.hChildren = midas.process(node.value).children;
+        data.hProperties = data.hProperties || {};
+        data.hProperties.className = [
+            ...data.hProperties.className || [],
+            'language-css',
             'midas',
-        ].filter(Boolean).join(' ');
+        ];
     }
 
     return ast => visit(ast, 'code', visitor);

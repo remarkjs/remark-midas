@@ -1,3 +1,8 @@
+# 4.0.0
+
+* Upgraded to midas 2.x.
+* Upgraded to remark-html 5.x.
+
 # 3.0.1
 
 * Upgraded to remark 5.x, this module will work the same using either version.
