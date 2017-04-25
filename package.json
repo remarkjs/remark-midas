@@ -1,6 +1,6 @@
 {
   "name": "remark-midas",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Highlight CSS in Markdown files with midas.",
   "main": "dist/index.js",
   "files": [
