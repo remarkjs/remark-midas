@@ -1,3 +1,8 @@
+# 5.0.0
+
+* Upgraded to remark 7.x (thanks to @wooorm).
+* (Breaking) Drops support for Node 0.12.
+
 # 4.0.0
 
 * Upgraded to midas 2.x.
