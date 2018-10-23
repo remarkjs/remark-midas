@@ -25,13 +25,13 @@ h1 {
 And our script, `example.js`, looks as follows:
 
 ```javascript
-var vfile = require('to-vfile');
-var report = require('vfile-reporter');
-var unified = require('unified');
-var markdown = require('remark-parse');
-var midas = require('remark-midas');
-var remark2rehype = require('remark-rehype');
-var html = require('rehype-stringify');
+const vfile = require('to-vfile')
+const report = require('vfile-reporter')
+const unified = require('unified')
+const markdown = require('remark-parse')
+const midas = require('remark-midas')
+const remark2rehype = require('remark-rehype')
+const html = require('rehype-stringify')
 
 unified()
   .use(markdown)
@@ -39,9 +39,9 @@ unified()
   .use(remark2rehype)
   .use(html)
   .process(vfile.readSync('example.md'), (err, file) => {
-    console.error(report(err || file));
-    console.log(String(file));
-  });
+    console.error(report(err || file))
+    console.log(String(file))
+  })
 ```
 
 Now, running `node example` yields:
