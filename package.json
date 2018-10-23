@@ -2,18 +2,7 @@
   "name": "remark-midas",
   "version": "5.0.0",
   "description": "Highlight CSS in Markdown files with midas.",
-  "main": "dist/index.js",
-  "module": "src/index.js",
-  "files": [
-    "license",
-    "dist"
-  ],
-  "scripts": {
-    "format": "remark *.md -qfo && prettier \"**/*.js\" --write && xo --fix",
-    "prepublishOnly": "npm run build",
-    "build": "babel src --out-dir dist --ignore src/__tests__",
-    "test": "ava src/__tests__"
-  },
+  "license": "MIT",
   "keywords": [
     "css",
     "highlight",
@@ -22,7 +11,24 @@
     "markdown",
     "remark"
   ],
-  "license": "MIT",
+  "repository": "remarkjs/remark-midas",
+  "bugs": "https://github.com/remarkjs/remark-midas/issues",
+  "author": "Ben Briggs <beneb.info@gmail.com> (http://beneb.info)",
+  "contributors": [
+    "Ben Briggs <beneb.info@gmail.com> (http://beneb.info)",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "files": [
+    "license",
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "midas": "^2.0.0",
+    "unist-util-visit": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
@@ -31,6 +37,7 @@
     "ava": "1.0.0-rc.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "del-cli": "^1.1.0",
+    "nyc": "^13.1.0",
     "prettier": "^1.14.3",
     "remark": "^10.0.0",
     "remark-cli": "^6.0.0",
@@ -38,17 +45,15 @@
     "remark-preset-wooorm": "^4.0.0",
     "xo": "^0.23.0"
   },
-  "homepage": "https://github.com/ben-eb/remark-midas",
-  "author": {
-    "name": "Ben Briggs",
-    "email": "beneb.info@gmail.com",
-    "url": "http://beneb.info"
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "format": "remark *.md -qfo && prettier \"**/*.js\" --write && xo --fix",
+    "build": "babel src --out-dir dist --ignore src/__tests__",
+    "test-api": "ava",
+    "test-coverage": "nyc --reporter lcov ava",
+    "test": "npm run format && npm run build && npm run test-coverage"
   },
-  "repository": "ben-eb/remark-midas",
-  "dependencies": {
-    "midas": "^2.0.0",
-    "unist-util-visit": "^1.0.0"
-  },
+  "browserslist": "> 2.5%, node 6",
   "babel": {
     "presets": [
       "@babel/preset-env"
@@ -57,7 +62,12 @@
       "add-module-exports"
     ]
   },
-  "browserslist": "> 2.5%, node 6",
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
   "ava": {
     "require": [
       "@babel/register"
