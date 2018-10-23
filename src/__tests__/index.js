@@ -3,7 +3,7 @@ import {join} from 'path';
 import ava from 'ava';
 import remark from 'remark';
 import html from 'remark-html';
-import midas from '../';
+import midas from '..';
 
 const base = file => read(join(__dirname, 'fixtures', file), 'utf-8');
 
