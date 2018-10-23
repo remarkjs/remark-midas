@@ -1,31 +1,36 @@
-import {readFileSync as read} from 'fs';
-import {join} from 'path';
-import ava from 'ava';
-import remark from 'remark';
-import html from 'remark-html';
-import midas from '..';
+import {readFileSync as read} from 'fs'
+import {join} from 'path'
+import test from 'ava'
+import remark from 'remark'
+import html from 'remark-html'
+import midas from '..'
 
-const base = file => read(join(__dirname, 'fixtures', file), 'utf-8');
+const base = file => read(join(__dirname, 'fixtures', file), 'utf-8')
 
-ava('should highlight css', t => {
-    const {contents} = remark().use(html).use(midas).processSync(base('input.md'));
-    t.deepEqual(contents, base('output.html'));
-});
+test('should highlight css', t => {
+  t.deepEqual(
+    remark()
+      .use(html)
+      .use(midas)
+      .processSync(base('input.md'))
+      .toString(),
+    base('output.html')
+  )
+})
 
-ava('should not modify existing htmlAttributes and classes', t => {
-    let ast = remark().parse('```css\nh1{}\n```');
-    ast = remark()
-        .use(() => tree => {
-            tree.children[0].data = {
-                hProperties: {
-                    'data-foo': 'bar',
-                    class: ['quux'],
-                },
-            };
-        })
-        .use(midas)
-        .runSync(ast);
+test('should not modify existing htmlAttributes and classes', t => {
+  const tree = remark()
+    .use(() => tree => {
+      tree.children[0].data = {
+        hProperties: {
+          dataFoo: 'bar',
+          className: ['quux']
+        }
+      }
+    })
+    .use(midas)
+    .runSync(remark().parse('```css\nh1{}\n```'))
 
-    t.deepEqual(ast.children[0].data.hProperties['data-foo'], 'bar');
-    t.truthy(~ast.children[0].data.hProperties.class.indexOf('quux'));
-});
+  t.deepEqual(tree.children[0].data.hProperties.dataFoo, 'bar')
+  t.true(tree.children[0].data.hProperties.className.indexOf('quux') !== -1)
+})

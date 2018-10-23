@@ -9,10 +9,9 @@
     "dist"
   ],
   "scripts": {
-    "format": "remark *.md -qfo",
+    "format": "remark *.md -qfo && prettier \"**/*.js\" --write && xo --fix",
     "prepublishOnly": "npm run build",
     "build": "babel src --out-dir dist --ignore src/__tests__",
-    "pretest": "eslint src",
     "test": "ava src/__tests__"
   },
   "keywords": [
@@ -30,17 +29,14 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "ava": "1.0.0-rc.1",
-    "babel-eslint": "^10.0.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "del-cli": "^1.1.0",
-    "eslint": "^5.0.0",
-    "eslint-config-cssnano": "^3.0.0",
-    "eslint-plugin-babel": "^5.0.0",
-    "eslint-plugin-import": "^2.14.0",
+    "prettier": "^1.14.3",
     "remark": "^10.0.0",
     "remark-cli": "^6.0.0",
     "remark-html": "^8.0.0",
-    "remark-preset-wooorm": "^4.0.0"
+    "remark-preset-wooorm": "^4.0.0",
+    "xo": "^0.23.0"
   },
   "homepage": "https://github.com/ben-eb/remark-midas",
   "author": {
@@ -62,17 +58,21 @@
     ]
   },
   "browserslist": "> 2.5%, node 6",
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "plugins": [
-      "babel"
-    ],
-    "extends": "cssnano"
-  },
   "ava": {
     "require": [
       "@babel/register"
     ]
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true
   },
   "remarkConfig": {
     "plugins": [
