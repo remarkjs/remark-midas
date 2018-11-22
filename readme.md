@@ -1,4 +1,11 @@
-# remark-midas [![Build][travis-badge]][travis] [![Coverage][codecov-badge]][codecov] [![Chat][chat-badge]][chat]
+# remark-midas
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Chat][chat-badge]][chat]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
 
 Highlight CSS in Markdown files with [midas][] and [remark][].
 
@@ -84,17 +91,27 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/remarkjs/remark-midas.svg
+[build-badge]: https://img.shields.io/travis/remarkjs/remark-midas.svg
 
-[travis]: https://travis-ci.org/remarkjs/remark-midas
+[build]: https://travis-ci.org/remarkjs/remark-midas
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-midas.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/remarkjs/remark-midas.svg
 
-[codecov]: https://codecov.io/github/remarkjs/remark-midas
+[coverage]: https://codecov.io/github/remarkjs/remark-midas
 
-[chat-badge]: https://img.shields.io/gitter/room/remarkjs/Lobby.svg
+[downloads-badge]: https://img.shields.io/npm/dm/remark-midas.svg
 
-[chat]: https://gitter.im/remarkjs/Lobby
+[downloads]: https://www.npmjs.com/package/remark-midas
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/remark
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
 
 [contributing]: https://github.com/remarkjs/remark/blob/master/contributing.md
 
