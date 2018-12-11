@@ -36,7 +36,6 @@
     "@babel/register": "^7.0.0",
     "ava": "1.0.0-rc.2",
     "babel-plugin-add-module-exports": "^1.0.0",
-    "del-cli": "^1.1.0",
     "nyc": "^13.1.0",
     "prettier": "^1.14.3",
     "remark": "^10.0.0",
