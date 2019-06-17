@@ -1,2 +1,4 @@
-dist
-coverage
+dist/
+coverage/
+remark-midas.js
+remark-midas.min.js

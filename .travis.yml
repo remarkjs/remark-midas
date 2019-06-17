@@ -3,3 +3,13 @@ node_js:
   - lts/dubnium
   - node
 after_script: bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: RDJlL7NJHKa+na8mc4fG7MJncTnM0XKaRFQ9CifptbXh8r0IFYHyTcGhJAVe9dJMdDBf9yKguR9qQNcxA3HWNxjQAbFHix2hWyPmXMQgd+6+2FTnPw7S4eCJrKjGgxrlkAMcqkz72zp2AuaTzQE5l/yTt7VaBtN4JSLypJrZuR10RTehdDX/rS6vgKBGeHild8I4Ebb8h1Thf9ep7iIXdywdZ2pKwIUt55kDxve64VoUtqNbfcsyI2Gs3bh8Moy5DIgs9opak6qy0+wtZYqgIcYF9rydkcEld6vGPD0cAC/BP/7S0jxnYjvDc5jmac145Qrpziw6/Bm7yuCTFgn/VH6BSiMdhCGqWXi6XUchcukh09sB60E2967CU7kA6rsR8hb5Y90fxr+76g2qegMC6dhA+dBlRwq+rf0Lne67gjbhv4m5L9HxY0VQwShKTJfwHj9MXFb40/XapImGJlCkvk3DhDroYNqC8yV508ECRqOOFUmzkQ4gUWfwHNSnlP8PrBG0VES5OwOYYDlLsdz+Qn5svltjuwjAY70wvY9CVNuvz4aA032oQ4MQ9ePnvTy37it7TZFy090dhdKgftEwduHD+vyok2S9JbH1MFBsAnkm2MupH1/EZoZBH8JgJL4BOX6oL5eQI05h3yOC92susIBZr8ImuAIdwJPksvWqt/4=
+  file:
+    - 'remark-midas.js'
+    - 'remark-midas.min.js'
+  on:
+    tags: true

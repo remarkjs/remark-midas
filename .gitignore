@@ -4,4 +4,6 @@
 coverage/
 dist/
 node_modules/
+remark-midas.js
+remark-midas.min.js
 yarn.lock
