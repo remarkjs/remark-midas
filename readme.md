@@ -77,6 +77,8 @@ Highlight CSS code blocks with [midas][].
     — Highlight code with highlight.js (via lowlight)
 *   [`remark-tree-sitter`](https://github.com/samlanning/remark-tree-sitter)
     — Highlight code with tree-sitter (rehype compatible)
+*   [`remark-code-frontmatter`](https://github.com/samlanning/remark-code-frontmatter)
+    — Extract frontmatter from markdown code blocks
 *   [`remark-code-extra`](https://github.com/samlanning/remark-code-extra)
     — Add to or transform the HTML output of code blocks (rehype compatible)
 *   [`rehype-highlight`](https://github.com/rehypejs/rehype-highlight)
