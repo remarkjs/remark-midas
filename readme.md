@@ -67,6 +67,12 @@ example.md: no issues found
 
 Highlight CSS code blocks with [midas][].
 
+## Security
+
+Use of `remark-midas` *should* be safe to use as `midas` *should* be safe to
+use.
+When in doubt, use [`rehype-sanitize`][sanitize].
+
 ## Related
 
 *   [`midas`](https://github.com/ben-eb/midas)
@@ -149,3 +155,5 @@ abide by its terms.
 [rehype]: https://github.com/rehypejs/rehype
 
 [midas]: https://github.com/ben-eb/midas
+
+[sanitize]: https://github.com/rehypejs/rehype-sanitize
