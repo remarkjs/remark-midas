@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "midas": "^2.0.0",
-    "unist-util-visit": "^1.0.0"
+    "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
