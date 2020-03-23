@@ -25,5 +25,5 @@ export default function attacher() {
     ]
   }
 
-  return tree => visit(tree, 'code', visitor)
+  return (tree) => visit(tree, 'code', visitor)
 }
