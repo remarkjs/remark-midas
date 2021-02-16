@@ -1,11 +1,11 @@
 import {readFileSync as read} from 'fs'
-import {join} from 'path'
+import path from 'path'
 import test from 'ava'
 import remark from 'remark'
 import html from 'remark-html'
-import midas from '..'
+import midas from '../index.js'
 
-const base = (file) => read(join(__dirname, 'fixtures', file), 'utf-8')
+const base = (file) => read(path.join(__dirname, 'fixtures', file), 'utf-8')
 
 test('should highlight css', (t) => {
   t.deepEqual(
