@@ -1,7 +1,0 @@
-dist/
-coverage/
-remark-midas.js
-remark-midas.min.js
-*.html
-*.json
-*.md
